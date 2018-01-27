@@ -1,0 +1,2 @@
+#!/bin/sh
+su-exec ${UID}:${GID} caddy --conf /etc/Caddyfile

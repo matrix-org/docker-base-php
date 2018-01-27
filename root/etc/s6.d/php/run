@@ -1,0 +1,3 @@
+#!/bin/sh
+chown -R ${UID}:${GID} /phpapp /var/log/php7
+su-exec ${UID}:${GID} php-fpm7
