@@ -1,3 +1,6 @@
 #!/bin/sh
-chown -R ${UID}:${GID} /phpapp /var/log/php7
+sed -i -e "s/<UPLOAD_MAX_SIZE>/$UPLOAD_MAX_SIZE/g" /etc/php7/php-fpm.conf \
+       -e "s/<MEMORY_LIMIT>/$MEMORY_LIMIT/g" /etc/php7/php-fpm.conf \
+       -e "s/<DISPLAY_ERRORS>/$DISPLAY_ERRORS/g" /etc/php7/php-fpm.conf
+chown -R ${UID}:${GID} ${APPDIR} /var/log/php7
 su-exec ${UID}:${GID} php-fpm7

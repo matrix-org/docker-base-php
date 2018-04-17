@@ -1,2 +1,3 @@
 #!/bin/sh
+sed -i -e "s#<APPDIR>#${APPDIR}#" /etc/Caddyfile
 su-exec ${UID}:${GID} caddy --conf /etc/Caddyfile
