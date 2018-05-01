@@ -1,3 +1,5 @@
 #!/bin/sh
+echo "\"sed\"ing the Caddyfile"
 sed -i -e "s#<APPDIR>#${APPDIR}#" /etc/Caddyfile
+echo "running caddy"
 su-exec ${UID}:${GID} caddy --conf /etc/Caddyfile
