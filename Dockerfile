@@ -1,4 +1,4 @@
-FROM docker.jcg.re/base-caddy
+FROM docker.io/matrixdotorg/base-caddy
 ENV APPDIR=/phpapp
 RUN apk add --no-cache \
       php7-fpm \
